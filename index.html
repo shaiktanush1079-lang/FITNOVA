@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPORTS ZONE | Sports Accessories Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="login-page">
+    <div class="login-card">
+      <div class="logo">⚽ SPORTS ZONE</div>
+      <h1>Welcome Back!</h1>
+      <p>Login to explore your sports world.</p>
+
+      <form id="loginForm">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+
+        <button type="submit" class="primary-btn">Login</button>
+      </form>
+
+      <p class="register-text">
+        New user? <a href="#" id="showRegister">Create Account</a>
+      </p>
+      <p id="loginMessage" class="message"></p>
+    </div>
+  </section>
+
+  <!-- REGISTRATION PAGE -->
+  <section id="registerPage" class="login-page hidden">
+    <div class="login-card">
+      <div class="logo">⚽ SPORTS ZONE</div>
+      <h1>Create Account</h1>
+      <p>Join our sports shopping community.</p>
+
+      <form id="registerForm">
+        <label>Full Name</label>
+        <input type="text" id="regName" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" id="regEmail" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" id="regPassword" placeholder="Create password" minlength="6" required>
+
+        <button type="submit" class="primary-btn">Register</button>
+      </form>
+
+      <p class="register-text">
+        Already registered? <a href="#" id="showLogin">Login</a>
+      </p>
+      <p id="registerMessage" class="message"></p>
+    </div>
+  </section>
+
+  <!-- MAIN APPLICATION -->
+  <div id="appPage" class="hidden">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="profile-area">
+        <button id="profileButton" class="profile-button">👤</button>
+        <span id="headerName">My Profile</span>
+
+        <div id="profileDropdown" class="profile-dropdown hidden">
+          <h3>My Profile</h3>
+          <p id="profileName"></p>
+          <p id="profileEmail"></p>
+          <button id="editProfile">Edit Profile</button>
+          <button id="logoutButton" class="logout-btn">Logout</button>
+        </div>
+      </div>
+
+      <div class="logo">⚽ SPORTS ZONE</div>
+
+      <button id="cartButton" class="cart-button">
+        🛒 Cart <span id="cartCount">0</span>
+      </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>YOUR GAME. YOUR GEAR.</h1>
+        <p>Discover the best sports accessories at great prices.</p>
+        <a href="#products" class="shop-btn">SHOP NOW</a>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="🔍 Search sports accessories, brands or products..."
+      >
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+      <h2>Explore Sports Categories</h2>
+      <div id="categoryList" class="category-list"></div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products-section">
+      <div class="section-heading">
+        <h2>Our Sports Collection</h2>
+        <span id="productResult">All Products</span>
+      </div>
+
+      <div id="productContainer" class="product-grid"></div>
+    </section>
+
+    <!-- CART PAGE -->
+    <section id="cartPage" class="cart-page hidden">
+      <div class="cart-heading">
+        <h2>🛒 Your Shopping Cart</h2>
+        <button id="clearCart" class="clear-btn">Clear Cart</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div id="cartSummary" class="cart-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: <strong id="subtotal">₹0</strong></p>
+        <p>Delivery: <strong>₹0</strong></p>
+        <h2>Total: <span id="total">₹0</span></h2>
+        <button id="checkoutButton" class="primary-btn">
+          Proceed to Checkout
+        </button>
+        <button id="continueShopping" class="secondary-btn">
+          Continue Shopping
+        </button>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section id="checkoutPage" class="checkout-page hidden">
+      <h2>Checkout</h2>
+      <form id="checkoutForm">
+        <label>Full Name</label>
+        <input type="text" id="deliveryName" required>
+
+        <label>Delivery Address</label>
+        <textarea id="deliveryAddress" placeholder="Enter your full address" required></textarea>
+
+        <label>Phone Number</label>
+        <input type="tel" id="deliveryPhone" pattern="[0-9]{10}" placeholder="10 digit number" required>
+
+        <label>Payment Method</label>
+        <select id="paymentMethod" required>
+          <option value="">Select payment method</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="Demo Online Payment">Demo Online Payment</option>
+        </select>
+
+        <h3>Amount: <span id="checkoutTotal">₹0</span></h3>
+        <button type="submit" class="primary-btn">Place Order</button>
+        <button type="button" id="backToCart" class="secondary-btn">Back to Cart</button>
+      </form>
+    </section>
+
+    <!-- ORDERS -->
+    <section id="ordersPage" class="orders-page hidden">
+      <h2>My Orders</h2>
+      <div id="orderList"></div>
+      <button id="backFromOrders" class="secondary-btn">Continue Shopping</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <h2>SPORTS ZONE</h2>
+      <p>Your one-stop destination for all sports accessories.</p>
+      <p>© 2026 SPORTS ZONE. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
